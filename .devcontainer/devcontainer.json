@@ -1,0 +1,17 @@
+{
+  "name": "ESP-IDF + Wokwi Lab",
+  "build": {
+    "dockerfile": "Dockerfile",
+    "context": ".."
+  },
+  "workspaceFolder": "/workspaces/${localWorkspaceFolderBasename}",
+  "customizations": {
+    "vscode": {
+      "extensions": [
+        "espressif.esp-idf-extension"
+      ]
+    }
+  },
+  "remoteUser": "root",
+  "postCreateCommand": "idf.py --version"
+}

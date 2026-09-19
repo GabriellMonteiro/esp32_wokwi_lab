@@ -1,0 +1,28 @@
+{
+  "version": 1,
+  "author": "Aluno",
+  "editor": "wokwi",
+  "parts": [
+    {
+      "type": "board-esp32-s3-devkitc-1",
+      "id": "esp",
+      "top": 0,
+      "left": 0,
+      "attrs": {}
+    },
+    {
+      "type": "wokwi-mpu6050",
+      "id": "mpu",
+      "top": -20,
+      "left": 300,
+      "attrs": {}
+    }
+  ],
+  "connections": [
+    ["esp:3V3", "mpu:VCC", "red", ["h0"]],
+    ["esp:GND.1", "mpu:GND", "black", ["h0"]],
+    ["esp:8", "mpu:SDA", "green", ["h0"]],
+    ["esp:9", "mpu:SCL", "blue", ["h0"]]
+  ],
+  "dependencies": {}
+}
