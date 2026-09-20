@@ -19,10 +19,15 @@
     }
   ],
   "connections": [
+    ["esp:TX", "$serialMonitor:RX", "", []],
+    ["esp:RX", "$serialMonitor:TX", "", []],
     ["esp:3V3", "mpu:VCC", "red", ["h0"]],
     ["esp:GND.1", "mpu:GND", "black", ["h0"]],
     ["esp:8", "mpu:SDA", "green", ["h0"]],
     ["esp:9", "mpu:SCL", "blue", ["h0"]]
   ],
-  "dependencies": {}
+  "dependencies": {},
+  "serialMonitor": {
+    "display": "terminal"
+  }
 }

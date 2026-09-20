@@ -1,4 +1,4 @@
-FROM espressif/idf:latest
+FROM espressif/idf:v5.5.5
 
 WORKDIR /workspaces/esp32_wokwi_lab
 
