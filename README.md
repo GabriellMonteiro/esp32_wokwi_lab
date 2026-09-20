@@ -1,10 +1,18 @@
-# Laboratório ESP32-S3 + MPU6050 — ESP-IDF, Docker e Wokwi
+# Entrega — ESP32-S3 + MPU6050 com ESP-IDF e Wokwi
 
-Template didático para executar uma atividade embarcada sem placa física no Windows.
+Repositório de entrega da atividade de IA Embarcada e Modelos Compactos. O projeto executa, sem placa física, um firmware C para ESP32-S3 que se comunica com um MPU6050 virtual via I2C.
 
-## Objetivo
+## Enunciado atendido
 
-Compilar firmware C com ESP-IDF dentro de um Dev Container e executar no Wokwi usando um ESP32-S3 virtual conectado a um MPU6050 via I2C.
+Compilar o firmware com ESP-IDF em um Dev Container e executar a simulação no Wokwi, utilizando um ESP32-S3 conectado a um MPU6050 via I2C. A aplicação deve identificar o sensor pelo registrador `WHO_AM_I` e apresentar dados de acelerômetro e giroscópio no monitor serial.
+
+## Resultado obtido
+
+- Target: ESP32-S3;
+- I2C: SDA no GPIO 8 e SCL no GPIO 9;
+- MPU6050 identificado em `0x68`;
+- build concluído sem erros;
+- acelerômetro e giroscópio lidos e exibidos no monitor serial.
 
 ## Fluxo
 
@@ -44,22 +52,15 @@ Depois, no VS Code, execute `Wokwi: Start Simulator`.
 | SDA | GPIO 8 |
 | SCL | GPIO 9 |
 
-## Resultado esperado
+## Evidências
 
-O firmware valida o sensor pelo registrador `WHO_AM_I` e imprime aceleração e giroscópio no monitor serial.
-
-## Git
-
-Depois de validar tudo:
-
-```bash
-git init
-git add .
-git commit -m "feat: laboratorio ESP32-S3 MPU6050 com Wokwi"
-```
-
-Crie o repositório remoto e faça o push normalmente.
+| Evidência | Comprovação |
+|---|---|
+| [ESP-IDF configurado](docs/evidencias/01-esp-idf-version.png) | `idf.py --version` executado no Dev Container |
+| [Circuito no Wokwi](docs/evidencias/02_circuito_wokwi_leitura_mpu6050.png) | ESP32-S3 e MPU6050 conectados por I2C |
+| [Build concluído](docs/evidencias/03-build-sucesso.png) | Compilação para ESP32-S3 sem erros |
+| [Monitor serial](docs/evidencias/04-monitor-serial.png) | `WHO_AM_I = 0x68` e leituras ACC/GYRO |
 
 ## Observação
 
-O template usa a imagem Docker `espressif/idf:latest` apenas para facilitar a primeira inicialização. Depois de obter um ambiente funcional, fixe uma versão específica da imagem no `.devcontainer/Dockerfile` para evitar mudanças durante a disciplina.
+A imagem do Dev Container está fixada em `espressif/idf:v5.5.5` para tornar a compilação reproduzível.

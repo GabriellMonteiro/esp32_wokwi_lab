@@ -1,5 +1,13 @@
 # Checklist da atividade
 
+## Entrega validada
+- [x] Firmware compilado para ESP32-S3 sem erros
+- [x] Simulação do Wokwi validada com MPU6050
+- [x] `WHO_AM_I = 0x68` confirmado
+- [x] Leituras de acelerômetro e giroscópio confirmadas
+- [x] Evidências incluídas no repositório
+- [x] Repositório Git publicado: `GabriellMonteiro/esp32_wokwi_lab`
+
 ## Ambiente
 - [ ] Docker Desktop instalado e iniciado
 - [ ] WSL2 funcionando
